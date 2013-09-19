@@ -17,6 +17,25 @@
             var version;
             var model;
             
+            function setName(name) {
+               Self.name = name;
+            }
+            function setCordova(cordova) {
+               Self.cordova = cordova;
+            }
+            function setPlatform(platform) {
+               Self.platform = platform;
+            }
+            function setUuid(uuid) {
+               Self.uuid = uuid;
+            }
+            function setVersion(version) {
+               Self.version = version;
+            }
+            function setModel(model) {
+               Self.model = model;
+            }
+            
             function toString() {
                return   "Dispositivo: " + Self.model +
                       "\n** Nome modelo: " + Self.name +
@@ -57,12 +76,12 @@
             oAgenda = new Agenda();
             
             oMyDevice = new MyDevice();
-            oMyDevice.name = window.device.name;
-            oMyDevice.cordova = window.device.cordova;
-            oMyDevice.platform = window.device.platform;
-            oMyDevice.uuid = window.device.uuid;
-            oMyDevice.version = window.device.version;
-            oMyDevice.model = window.device.model;
+            oMyDevice.setName(device.name);
+            oMyDevice.setCordova(device.cordova);
+            oMyDevice.SetPlatform(device.platform);
+            oMyDevice.setUuid(device.uuid);
+            oMyDevice.setVersion(device.version);
+            oMyDevice.setModel(device.model);
             
             alert (oMyDevice.toString());
             
