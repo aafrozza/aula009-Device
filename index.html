@@ -57,12 +57,12 @@
             oAgenda = new Agenda();
             
             oMyDevice = new MyDevice();
-            oMyDevice.name = device.name;
-            oMyDevice.cordova = device.cordova;
-            oMyDevice.platform = device.platform;
-            oMyDevice.uuid = device.uuid;
-            oMyDevice.version = device.version;
-            oMyDevice.model = device.model;
+            oMyDevice.name = window.device.name;
+            oMyDevice.cordova = window.device.cordova;
+            oMyDevice.platform = window.device.platform;
+            oMyDevice.uuid = window.device.uuid;
+            oMyDevice.version = window.device.version;
+            oMyDevice.model = window.device.model;
             
             alert (oMyDevice.toString());
             
