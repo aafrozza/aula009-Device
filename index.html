@@ -6,7 +6,7 @@
       <meta charset="utf-8" />
       
       <!-- -->
-      <script src="js/cordova-2.7.0.js"></script>
+      <script type="text/javascript" charset="utf-8" src="js/cordova-2.7.0.js"></script>
       <!-- Objeto device -->
       <script type="text/javascript">
          function MyDevice() {
@@ -78,7 +78,7 @@
             oMyDevice = new MyDevice();
             oMyDevice.setName(device.name);
             oMyDevice.setCordova(device.cordova);
-            oMyDevice.SetPlatform(device.platform);
+            oMyDevice.setPlatform(device.platform);
             oMyDevice.setUuid(device.uuid);
             oMyDevice.setVersion(device.version);
             oMyDevice.setModel(device.model);
