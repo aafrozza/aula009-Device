@@ -17,31 +17,31 @@
             var version;
             var model;
             
-            function setName(name) {
-               Self.name = name;
+            this.setName = function (name) {
+               this.name = name;
             }
-            function setCordova(cordova) {
-               Self.cordova = cordova;
+            this.setCordova = function (cordova) {
+               this.cordova = cordova;
             }
-            function setPlatform(platform) {
-               Self.platform = platform;
+            this.setPlatform = function (platform) {
+               this.platform = platform;
             }
-            function setUuid(uuid) {
-               Self.uuid = uuid;
+            this.setUuid = function (uuid) {
+               this.uuid = uuid;
             }
-            function setVersion(version) {
-               Self.version = version;
+            this.setVersion = function (version) {
+               this.version = version;
             }
-            function setModel(model) {
-               Self.model = model;
+            this.setModel = function (model) {
+               this.model = model;
             }
             
-            function toString() {
-               return   "Dispositivo: " + Self.model +
-                      "\n** Nome modelo: " + Self.name +
-                      "\nS.O.: " + Self.platform +
-                      "\nVersão: " + Self.version +
-                      "\nCordova: " + Self.cordova;
+            this.toString = function () {
+               return   "Dispositivo: " + this.model +
+                      "\n** Nome modelo: " + this.name +
+                      "\nS.O.: " + this.platform +
+                      "\nVersão: " + this.version +
+                      "\nCordova: " + this.cordova;
             }
          }
          
@@ -60,7 +60,7 @@
 
             alert('Tipo de conexão: ' + states[networkState]);
          }
-      </script
+      </script>
       
       <!-- Carrega jQuery Mobile -->
       <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
@@ -75,7 +75,7 @@
          function inicializa() {
             oAgenda = new Agenda();
             
-           /* oMyDevice = new MyDevice();
+            oMyDevice = new MyDevice();
             oMyDevice.setName(device.name);
             oMyDevice.setCordova(device.cordova);
             oMyDevice.SetPlatform(device.platform);
@@ -83,7 +83,7 @@
             oMyDevice.setVersion(device.version);
             oMyDevice.setModel(device.model);
             
-            alert (oMyDevice.toString());*/
+            alert (oMyDevice.toString());
             
             checkConnection();
          }
