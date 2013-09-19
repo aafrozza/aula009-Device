@@ -54,9 +54,9 @@
       <!-- Scripts da lógica de negócios -->
       <script type="text/javascript">
          function inicializa() {
-            oAgenda = new Agenda;
+            oAgenda = new Agenda();
             
-            oMyDevice = new MyDevice;
+            oMyDevice = new MyDevice();
             oMyDevice.name = device.name;
             oMyDevice.cordova = device.cordova;
             oMyDevice.platform = device.platform;
