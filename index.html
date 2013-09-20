@@ -5,62 +5,10 @@
       <title>Agenda de atividades acadêmicas</title>
       <meta charset="utf-8" />
       
-      <!-- -->
+      <!-- Carrega o framework Cordova (PhoneGAP) -->
       <script type="text/javascript" charset="utf-8" src="js/cordova-2.7.0.js"></script>
-      <!-- Objeto device -->
-      <script type="text/javascript">
-         function MyDevice() {
-            var name;
-            var cordova;
-            var platform;
-            var uuid;
-            var version;
-            var model;
-            
-            this.setName = function (name) {
-               this.name = name;
-            }
-            this.setCordova = function (cordova) {
-               this.cordova = cordova;
-            }
-            this.setPlatform = function (platform) {
-               this.platform = platform;
-            }
-            this.setUuid = function (uuid) {
-               this.uuid = uuid;
-            }
-            this.setVersion = function (version) {
-               this.version = version;
-            }
-            this.setModel = function (model) {
-               this.model = model;
-            }
-            
-            this.toString = function () {
-               return   "Dispositivo: " + this.model +
-                      "\n** Nome modelo: " + this.name +
-                      "\nS.O.: " + this.platform +
-                      "\nVersão: " + this.version +
-                      "\nCordova: " + this.cordova;
-            }
-         }
-         
-         function checkConnection() {
-            var networkState = navigator.connection.type;
-
-            var states = {};
-            states[Connection.UNKNOWN]  = 'Conexão desconhecida';
-            states[Connection.ETHERNET] = 'Ethernet';
-            states[Connection.WIFI]     = 'WiFi';
-            states[Connection.CELL_2G]  = 'Celular 2G';
-            states[Connection.CELL_3G]  = 'Celular 3G';
-            states[Connection.CELL_4G]  = 'Celular 4G';
-            states[Connection.CELL]     = 'Conexão celular genérica';
-            states[Connection.NONE]     = 'Sem conexão rede';
-
-            alert('Tipo de conexão: ' + states[networkState]);
-         }
-      </script>
+      <!-- Carrega sscripts do Device -->
+      <script type="text/javascript" src="js/device.js"></script>
       
       <!-- Carrega jQuery Mobile -->
       <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
@@ -74,8 +22,11 @@
       <script type="text/javascript">
          function inicializa() {
             oAgenda = new Agenda();
-            
+         }
+         
+         function device() {   
             oMyDevice = new MyDevice();
+            
             oMyDevice.setName(device.name);
             oMyDevice.setCordova(device.cordova);
             oMyDevice.setPlatform(device.platform);
@@ -84,7 +35,8 @@
             oMyDevice.setModel(device.model);
             
             alert (oMyDevice.toString());
-            
+         }
+         function connection() {
             checkConnection();
          }
       </script>
@@ -122,6 +74,8 @@
                   <fieldset class="ui-grid-a">
                      <div class="ui-block-a"><button type="submit" data-theme="a">Salvar</button></div>     
                      <div class="ui-block-b"><button type="submit" data-theme="d">Cancelar</button></div>
+                     <div class="ui-block-a"><button type="submit" data-theme="a" onClick="device()">Dispositivo</button></div>     
+                     <div class="ui-block-b"><button type="submit" data-theme="d" onClick="connection()">Conexão</button></div>
                   </fieldset>
                </div>
             </form>
